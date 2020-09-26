@@ -1,0 +1,7 @@
+#!/bin/bash
+restore_svn
+restore_tmpsvn
+restore_acad
+restore_part_in_stock
+restore_b2rental
+restore_acad_files

@@ -1,0 +1,16 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir tmp_voipForACT
+cd tmp_voipForACT
+cvs co -kk os/v-uClinux/
+find . -name CVS -exec \rm -r '{}' \;
+cp os/v-uClinux/user/gct_voip/mobile/Makefile.ACT os/v-uClinux/user/gct_voip/mobile/Makefile
+rm os/v-uClinux/user/gct_voip/mobile/Makefile.ACT
+\rm -r os/v-uClinux/ReleaseNotes
+\rm -r os/v-uClinux/user/gct_voip/mobile/umacliadt
+\rm -r os/v-uClinux/user/gct_voip/mobile/sipcallmgr
+\rm -r os/v-uClinux/user/gct_voip/stand_alone
+tar zcvf os_ACT.tgz os/*
+mv os_ACT.tgz ..
+cd ..
+\rm -r tmp_voipForACT

@@ -1,0 +1,10 @@
+#!/bin/tcsh
+mv $1 $1.current
+cvs update -r $2 $1
+mv $1 $1.$2.c
+cvs update -A $1
+cvs update -kk $1
+mv $1.current $1
+grep $1 CVS/Entries
+echo "All sticky tags are removed except -kk"
+echo "Check the original sticky tag"

@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/test/chansim/
+gvim -o test_chansim.cc

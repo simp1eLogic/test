@@ -1,0 +1,5 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir kjh_cvs_uwbmac
+cd kjh_cvs_uwbmac
+cvs co -kk uwbmac

@@ -1,0 +1,9 @@
+#!/bin/tcsh -f
+mkdir tmp_diff
+mkdir tmp_diff/1
+mkdir tmp_diff/2
+cp -r $1 tmp_diff/1
+cp -r $2 tmp_diff/2
+cd tmp_diff
+find . -name CVS -exec \rm -r '{}' \;
+diff -r 1/ 2/

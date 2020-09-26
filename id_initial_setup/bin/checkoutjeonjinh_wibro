@@ -1,0 +1,5 @@
+#!/bin/tcsh
+setenv CVSROOT /home/jeonjinh/cvsroot/
+mkdir jeonjinh_cvs_wibro
+cd jeonjinh_cvs_wibro
+cvs co -kk wibro

@@ -1,0 +1,3 @@
+setenv VINCENT_GCC /usr/gvsdt/local/bin
+setenv VINCENT_GCC_EXEC_PREFIX /usr/gvsdt/local/lib/gcc-lib/
+setenv PATH .:$VINCENT_GCC/:${PATH}

@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf acad_libs
+tar xvf /home/kjh/backup/acad_libs_current.tar
+mv home/svn/acad_libs .
+rm -rf home

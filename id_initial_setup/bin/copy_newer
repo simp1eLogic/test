@@ -1,0 +1,3 @@
+cd /home/kjh/daca/
+find ./mp3 -cnewer /home2/kjh/daca_backup/mp3_110113 -exec cp --parents -p '{}' /home2/kjh/daca_backup/copy_newer/ \;
+touch do_not_touch_this_file_except_copy_newer.log

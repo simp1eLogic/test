@@ -1,0 +1,10 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir tmp_linux-2.4.x
+cd tmp_linux-2.4.x
+cvs co -kk os/v-uClinux/linux-2.4.x
+find . -name CVS -exec \rm -r '{}' \;
+tar zcvf kernel.tgz os/*
+mv kernel.tgz ..
+cd ..
+\rm -r tmp_linux-2.4.x

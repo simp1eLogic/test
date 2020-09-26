@@ -1,0 +1,16 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir tmp_am
+cd tmp_am
+cvs co -kk os/v-uClinux/user/gct_voip/audio_manager
+cvs co -kk os/v-uClinux/user/gct_voip/debugprintcontrol.h
+#cvs co -kk os/v-uClinux/linux-2.4.x/drivers/sound
+cp os/v-uClinux/user/gct_voip/debugprintcontrol.h os/v-uClinux/user/gct_voip/audio_manager/debugprintcontrol.h 
+find . -name CVS -exec \rm -r '{}' \;
+mv os/v-uClinux/user/gct_voip/audio_manager audio_manager
+#mv os/v-uClinux/linux-2.4.x/drivers/sound sound
+#tar zcvf am.tgz audio_manager/* sound/*
+tar zcvf am.tgz audio_manager/*
+mv am.tgz ..
+cd ..
+\rm -r tmp_am

@@ -1,0 +1,34 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvsrootALL
+cd hmchung_cvsrootALL
+cvs co -kk app
+cvs co -kk binutils
+cvs co -kk cvstest
+cvs co -kk ecos
+cvs co -kk ecos.old
+cvs co -kk gct_voip
+cvs co -kk gct_voip_new
+cvs co -kk gdb
+cvs co -kk GdmCeDrv
+cvs co -kk GdmWb
+cvs co -kk GdmWiFi
+cvs co -kk gvsdt
+cvs co -kk library
+cvs co -kk mobile
+cvs co -kk os
+cvs co -kk redboot
+cvs co -kk SdioBin
+cvs co -kk uClinux-dist
+cvs co -kk voip
+cvs co -kk vsdt
+cvs co -kk ecos2
+cvs co -kk GCT_GDM
+cvs co -kk GdmWbPrt
+cvs co -kk LoopbackWin32
+cvs co -kk sdio_boot
+cvs co -kk WiBroHostDriver
+cvs co -kk wibro_map
+cvs co -kk WibroMultiDnldr
+cvs co -kk WIFIHostDriver
+cvs co -kk WinWCM

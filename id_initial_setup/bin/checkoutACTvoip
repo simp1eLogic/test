@@ -1,0 +1,6 @@
+#!/bin/tcsh
+setenv CVSROOT /home/gct1/cvsroot/
+mkdir gct1_cvs_voip
+cd gct1_cvs_voip
+cvs co -kk os/v-uClinux
+cd ..

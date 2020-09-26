@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/common/
+gvim -o3 common_attr.cc functions.cc timer.cc

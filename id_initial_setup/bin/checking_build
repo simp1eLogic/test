@@ -1,0 +1,6 @@
+#!/bin/tcsh
+\rm -r GDM7005
+checkoutkjhGDM7005
+cd GDM7005
+build
+ls -al ./bt/apps/std/bt_uart_5104r30.bin

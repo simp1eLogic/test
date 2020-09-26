@@ -1,0 +1,5 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvs_binutils
+cd hmchung_cvs_binutils
+cvs co -kk binutils

@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/test/rxtxmodule/
+gvim -o3 test_rxtxmodule.cc set_rxtxmodule.h set_rxtxmodule.cc

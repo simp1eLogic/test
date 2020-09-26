@@ -1,0 +1,9 @@
+#!/bin/sh
+for item in "$1"
+do
+#	echo ${item%.mp3}
+	if [ ! -f "${item%.mp3}.txt" ]
+	then
+		touch ${item%.mp3}.txt
+	fi
+done

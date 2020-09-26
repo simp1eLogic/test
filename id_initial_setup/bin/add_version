@@ -1,0 +1,11 @@
+#!/bin/sh
+for item in "$1"
+do
+	if [ -f "$item.TStime" ]
+	then
+	sed s/word/version\":\[0,0,0\],\"word/ $item.TStime > ~/tmp/tmp.TStime
+	cp ~/tmp/tmp.TStime $item.TStime
+	#ls "$1"
+	#ls -al $item
+	fi
+done

@@ -1,0 +1,2 @@
+cp ~/bin/.gdbinit_pnc pnc/.gdbinit
+cp ~/bin/.gdbinit_dev dev/.gdbinit

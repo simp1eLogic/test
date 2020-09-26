@@ -1,0 +1,15 @@
+#!/bin/sh
+HOST=techplus.co.kr
+USER=kjh
+PASSWD="passowrd string"
+DIR=./
+FILE=$1
+ftp -n $HOST << END_SCRIPT
+quote USER $USER
+quote PASS $PASSWD
+bin
+cd $DIR
+put $FILE
+quit
+END_SCRIPT
+exit 0

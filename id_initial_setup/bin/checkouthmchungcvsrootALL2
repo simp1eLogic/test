@@ -1,0 +1,5 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvsrootALL
+cd hmchung_cvsrootALL
+cvs co -kk os

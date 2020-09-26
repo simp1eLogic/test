@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf acad_hank
+tar xvf /home/kjh/backup/acad_hank_current.tar
+mv home/svn/acad_hank .
+rm -rf home

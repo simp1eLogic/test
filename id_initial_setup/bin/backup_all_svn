@@ -1,0 +1,7 @@
+#!/bin/bash
+backup_svn
+backup_tmpsvn
+backup_acad
+backup_part_in_stock
+backup_b2rental
+backup_acad_files

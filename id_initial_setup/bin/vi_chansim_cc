@@ -1,0 +1,4 @@
+cd /home/kjh/work/macsrm/chansim/
+gvim -o channel.cc collision.cc delay.cc packet.cc phy.cc rate_set.cc
+cd /home/kjh/work/macsrm/include/
+gvim -o channel.h collision.h delay.h packet.h phy.h rate_set.h

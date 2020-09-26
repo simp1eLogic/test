@@ -1,0 +1,6 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir kjh_cvs_voip
+cd kjh_cvs_voip
+cvs co -kk os/v-uClinux
+cd ..

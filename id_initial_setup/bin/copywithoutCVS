@@ -1,0 +1,8 @@
+#!/bin/tcsh -f
+mkdir aa__
+cp -r $1/* aa__/
+cd aa__
+find . -name CVS -exec \rm -r '{}' \;
+cd ..
+cp -r aa__/* $2/
+\rm -r aa__

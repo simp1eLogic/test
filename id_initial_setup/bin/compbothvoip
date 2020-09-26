@@ -1,0 +1,15 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvs_voip
+cd hmchung_cvs_voip
+cvs co -kk os/v-uClinux
+cd ..
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir kjh_cvs_voip
+cd kjh_cvs_voip
+cvs co -kk os/v-uClinux
+cd ..
+find . -name CVS -exec \rm -r '{}' \;
+diff -r hmchung_cvs_voip/ kjh_cvs_voip/ > result_diff
+\rm -r hmchung_cvs_voip &
+\rm -r kjh_cvs_voip &

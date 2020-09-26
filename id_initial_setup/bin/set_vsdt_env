@@ -1,0 +1,5 @@
+setenv VINCENT_GCC  /home/hmchung/VSDT_OS_RELEASE/vincent-sdt.20040924
+#setenv VINCENT_GCC  /home/kjh/vsdt/local
+#setenv VINCENT_GCC  /home/hmchung/vsdt/local
+setenv VINCENT_GCC_EXEC_PREFIX   $VINCENT_GCC/lib/gcc-lib/
+set path=($VINCENT_GCC/bin $path)

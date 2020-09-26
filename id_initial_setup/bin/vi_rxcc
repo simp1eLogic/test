@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/rx/
+gvim -o4 pr_channel_state.cc pr_validate_mpdu.cc pr_filter_mpdu.cc pr_defragment.cc

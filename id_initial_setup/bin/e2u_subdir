@@ -1,0 +1,1 @@
+for i in `find . \( -name '*.php' -o -name '*.htm' -o -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.sql' -o -name '*.txt' \) -print` ; do e2u.sh $i ; done

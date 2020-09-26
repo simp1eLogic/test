@@ -1,0 +1,4 @@
+#!/bin/tcsh
+find /home/hmchung/cvsroot/ -mtime -$1 -name "*,v" -exec tar rvf updated_cvsfiles.tar "{}" \;
+find /home/kjh/cvsroot/ -mtime -$1 -name "*,v" -exec tar rvf updated_cvsfiles.tar "{}" \;
+gzip updated_cvsfiles.tar

@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf acad_cmsong
+tar xvf /home/kjh/backup/acad_cmsong_current.tar
+mv home/svn/acad_cmsong .
+rm -rf home

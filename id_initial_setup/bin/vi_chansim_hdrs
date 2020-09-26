@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/include/
+gvim -o packet.h channel.h delay.h input_data.h output_data.h phy.h

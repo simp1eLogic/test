@@ -1,0 +1,5 @@
+cp -r bin ~/
+cp -r .profile ~/
+cp -r .subversion ~/
+cp -r .vim ~/
+cp -r .vimrc ~/

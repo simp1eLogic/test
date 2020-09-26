@@ -1,0 +1,86 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir tmp_macupdate
+cd tmp_macupdate
+mkdir hmchung_cvs_voip
+mkdir kjh_cvs_voip
+cd hmchung_cvs_voip
+
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_api.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_hcr.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_main.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_PHY11B.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_phy.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_type.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/Makefile
+cvs co -kk os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.c
+cvs co -kk os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/kernel/arch.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/kernel/bug.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/kernel/entry.S
+
+cd ../kjh_cvs_voip
+setenv CVSROOT /home/kjh/cvsroot/
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_api.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_hcr.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_main.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_PHY11B.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_phy.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_type.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/Makefile
+cvs co -kk os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.c
+cvs co -kk os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.h
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/kernel/arch.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/kernel/bug.c
+cvs co -kk os/v-uClinux/linux-2.4.x/arch/vincent/kernel/entry.S
+
+cd ../
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC.h kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC.h
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_api.h kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_api.h
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.c kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.c
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.h kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.h
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_hcr.h kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_hcr.h
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_main.c kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_main.c
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.c kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.c
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.h kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.h
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_PHY11B.c kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_PHY11B.c
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_phy.h kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_phy.h
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_type.h kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_type.h
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/Makefile kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/Makefile
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.c kjh_cvs_voip/os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.c
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.h kjh_cvs_voip/os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.h
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/kernel/arch.c kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/kernel/arch.c
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/kernel/bug.c kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/kernel/bug.c
+cp hmchung_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/kernel/entry.S kjh_cvs_voip/os/v-uClinux/linux-2.4.x/arch/vincent/kernel/entry.S
+
+cd kjh_cvs_voip
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC.h
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_api.h
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.c
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_functions.h
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_hcr.h
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_main.c
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.c
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_misc.h
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_PHY11B.c
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_phy.h
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/GDM5104_MAC_type.h
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/vpos/drivers/wlan/Makefile
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.c
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/drivers/net/gdm5104dual/gmm5104.h
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/kernel/arch.c
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/kernel/bug.c
+cvs commit -m "synch. to hmchung's cvsroot" os/v-uClinux/linux-2.4.x/arch/vincent/kernel/entry.S
+
+cd ../..
+\rm -r tmp_macupdate

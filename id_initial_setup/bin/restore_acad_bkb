@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf acad_bkb
+tar xvf /home/kjh/backup/acad_bkb_current.tar
+mv home/svn/acad_bkb .
+rm -rf home

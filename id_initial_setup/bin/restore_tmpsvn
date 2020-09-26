@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf tmpsvn
+tar xvf /home/kjh/backup/tmpsvn_current.tar
+mv home/svn/tmpsvn .
+rm -rf home

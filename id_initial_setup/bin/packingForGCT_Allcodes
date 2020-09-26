@@ -1,0 +1,10 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir tmp_voipForGCT
+cd tmp_voipForGCT
+cvs co -kk os/v-uClinux/
+find . -name CVS -exec \rm -r '{}' \;
+tar zcvf os_all.tgz os/*
+mv os_all.tgz ..
+cd ..
+\rm -r tmp_voipForGCT

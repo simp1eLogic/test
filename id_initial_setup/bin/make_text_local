@@ -1,0 +1,2 @@
+find . -type d -exec chmod +x '{}' \;
+find . -name "*.[Mm][Pp]3" -exec ~/bin/make_text_ifnot '{}' \;

@@ -1,0 +1,9 @@
+#!/bin/tcsh -f
+echo "cp ./images/* " $1
+cp ./images/* $1
+echo "cp ./linux-2.4.x/vmlinuz" $1
+cp ./linux-2.4.x/vmlinuz $1
+echo "cp ./linux-2.4.x/System.map" $1
+cp ./linux-2.4.x/System.map $1
+echo "cp ./linux-2.4.x/disa" $1
+cp ./linux-2.4.x/disa $1

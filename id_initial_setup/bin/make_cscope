@@ -1,0 +1,8 @@
+#!/bin/tcsh
+find . -name "*.cpp" -print > cscope.files
+find . -name "*.h" -print >> cscope.files
+find . -name "*.c" -print >> cscope.files
+find . -name "*.S" -print >> cscope.files
+find . -name "*.ecm" -print >> cscope.files
+find . -name "*.cdl" -print >> cscope.files
+cscope -b

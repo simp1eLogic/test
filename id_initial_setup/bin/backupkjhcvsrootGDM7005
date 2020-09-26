@@ -1,0 +1,4 @@
+cd
+tar zcvf kjhcvsrootGDM7005backup.tgz cvsroot/GDM7005/*
+#ftp backup < bin/ftp_command
+#rm backupfile.tar.gz

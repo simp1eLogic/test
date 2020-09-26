@@ -1,0 +1,17 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvsrootALL
+cd hmchung_cvsrootALL
+cvs co -kk app
+cvs co -kk binutils
+cvs co -kk cvstest
+cvs co -kk ecos
+cvs co -kk gct_voip
+cvs co -kk gct_voip_new
+cvs co -kk gdb
+cvs co -kk GdmCeDrv
+cvs co -kk GdmWb
+cvs co -kk GdmWiFi
+cvs co -kk gvsdt
+cvs co -kk library
+cvs co -kk mobile

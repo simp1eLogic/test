@@ -1,0 +1,18 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+setenv VINCENT_GCC /usr/gvsdt/local/bin
+setenv VINCENT_GCC_EXEC_PREFIX /usr/gvsdt/local/lib/gcc-lib/
+setenv PATH .:$VINCENT_GCC/:${PATH}
+mkdir kjh_cvs_voip
+cd kjh_cvs_voip
+cvs co -kk os/v-uClinux
+cd os/v-uClinux/user/gct_voip/
+setworkplace
+cp config_kernel_GSKG5401 ../../linux-2.4.x/.config
+cp config_fs_GSKG5401 ../../config/.config
+cd ../..
+make config
+make oldconfig
+make clean
+make dep
+make LINUXTARGET=zImage >& mlog

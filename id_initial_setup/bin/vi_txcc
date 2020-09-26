@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/tx/
+gvim -o2 pr_data_pump.cc pr_backoff_procedure.cc

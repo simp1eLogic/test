@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/include/
+gvim -o5 reception.h channel_state.h validate_mpdu.h filter_mpdu.h defragment.h

@@ -1,0 +1,18 @@
+#!/bin/tcsh -f
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvs_gct_voip_new
+cd hmchung_cvs_gct_voip_new
+cvs co -kk gct_voip_new
+mv gct_voip_new gct_voip
+cd ..
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir kjh_cvs_voip
+cd kjh_cvs_voip
+cvs co -kk os/v-uClinux/user/gct_voip
+mv os/v-uClinux/user/gct_voip .
+\rm -r os
+cd ..
+find . -name CVS -exec \rm -r {} \;
+diff -r hmchung_cvs_gct_voip_new/ kjh_cvs_voip/ > result_diff
+#\rm -r hmchung_cvs_gct_voip_new &
+#\rm -r kjh_cvs_voip &

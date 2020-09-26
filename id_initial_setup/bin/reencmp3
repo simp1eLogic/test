@@ -1,0 +1,3 @@
+#!/bin/sh
+ffmpeg -i $1 -acodec libmp3lame -ab 64k tmp.mp3
+mv tmp.mp3 $1

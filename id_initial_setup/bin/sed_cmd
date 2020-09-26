@@ -1,0 +1,1 @@
+sed s/word/version\":\[0,0,0\],\"word/ test.TStime > tmp.TStime

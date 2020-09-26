@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf acad_guichana70
+tar xvf /home/kjh/backup/acad_guichana70_current.tar
+mv home/svn/acad_guichana70 .
+rm -rf home

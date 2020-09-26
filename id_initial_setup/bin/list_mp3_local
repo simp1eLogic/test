@@ -1,0 +1,9 @@
+find . -type d -exec chmod +x '{}' \;
+find . -name "*.[Mm][Pp]3" -exec chmod +r '{}' \;
+find . -name "*.txt" -exec chmod +r '{}' \;
+find . -name "*.TStime" -exec chmod +r '{}' \;
+find . -name "*.smi" -exec chmod +r '{}' \;
+find . -name "*.[Mm][Pp]3" -print >> ~/daca/mp3/list_tmp.txt
+sort ~/daca/mp3/list_tmp.txt > ~/daca/mp3/list.sorted.txt
+cat ~/daca/mp3/list.sorted.txt >> ~/daca/mp3/list.txt
+rm ~/daca/mp3/list.sorted.txt

@@ -1,0 +1,5 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir kjh_cvs_WiFiSpVPOS
+cd kjh_cvs_WiFiSpVPOS
+cvs co -kk WiFiSpVPOS

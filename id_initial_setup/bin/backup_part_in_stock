@@ -1,0 +1,29 @@
+#!/bin/bash
+FILE_NAME=`date +%y%m%d-%H%M%S`
+cd ~/work/part_in_stock
+svn update
+FILE_NAME=r`svn info|awk '/Revision/' | awk '{print $2}'`_$FILE_NAME
+CURR_REV=`svn info|awk '/Revision/' | awk '{print $2}'`
+cd ~/backup/
+LAST_REV=`find . -name "part_in_stock_r*.tar" | cut --delimiter=_ -f4 |cut -c2- | sort -n | tail -n 1`
+
+if [ "$CURR_REV" -eq "$LAST_REV" ]
+then
+echo "equal"
+exit 0
+fi
+
+if [ "$CURR_REV" -gt "$LAST_REV" ]
+then
+echo "greater than"
+rm part_in_stock_current.tar
+tar cvf part_in_stock_$FILE_NAME.tar /home/svn/part_in_stock/
+cp part_in_stock_$FILE_NAME.tar part_in_stock_current.tar
+fi
+
+if [ "$CURR_REV" -lt "$LAST_REV" ]
+then
+echo "less than:somthing wrong!!!"
+exit 0
+fi
+

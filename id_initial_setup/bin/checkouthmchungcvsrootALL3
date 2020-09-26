@@ -1,0 +1,9 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvsrootALL
+cd hmchung_cvsrootALL
+cvs co -kk redboot
+cvs co -kk SdioBin
+cvs co -kk uClinux-dist
+cvs co -kk voip
+cvs co -kk vsdt

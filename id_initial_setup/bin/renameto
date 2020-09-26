@@ -1,0 +1,214 @@
+#!/bin/sh
+##
+## "Chilbing, Kim"<san2(at)linuxchannel.net>
+## 2003.10.22 patched for FreeBSD 
+## 2002.11.05 add upcase and lowcase, usage to stderr
+## 2002.04.13 patch(sort)
+## 2002.03.29 patch(thanks '¥‹n≈∞')
+## 2002.03.27 add options
+## 2002.03.04
+##
+## http://ftp.linuxchanel.net/devel/renameto/
+##
+## chmod a+rx renameto
+## cp renameto /usr/local/bin/renameto
+
+usage()
+{
+	echo "${T_MD}usage${T_ME} : renameto [options] \"/from_string/to_string/\" \"<target_files|target_directory>\"" >&1
+	echo "  ${T_MD}options${T_ME}" >&2
+	echo "    -R                : include all sub directory (not default)" >&2
+	echo "    -Rn               : 'n' is sub directory maxdepth number" >&2
+	echo "                        '-R0' is current directory (same as not given options)" >&2
+	echo "    -t,-test,--test   : only test view" >&2
+	echo "    -c,-case,--case   : translate upcase and lowcase" >&2
+	echo "    -v,-view,--view   : only test view" >&2
+	echo "    -d,-dir,--dir     : only directory adjust (not files)" >&2
+	echo "    -h,-help,--help   : help" >&2
+	echo "  ${T_MD}example${T_ME}" >&2
+	echo "    renameto /html/php/ \"*.html\" (same as rename command)" >&2
+	echo "    renameto -R \"/ /_/\" \"* *.mp3\" (replace file \" \" to \"_\" all sub-directory)" >&2
+	echo "    renameto -R -test \"/ /_/\" \"* *.mp3\" (test view)" >&2
+	echo "    renameto -R -dir \"/ /_/\" \"/home/xxx/mp3/* *\" (replace directory)" >&2
+	echo "    renameto -R -case \"/[A-Z]/[a-z]/\" \"*\" (to lowcase)" >&2
+	echo "    renameto -R -case \"/[e-k]/[E-K]/\" \"*\" (to upcase)" >&2
+	echo "source download ${T_MB}http://ftp.linuxchannel.net/devel/renameto/${T_ME}" >&2
+	exit 0
+}
+
+testing()
+{
+	echo "${1}: found '$2'(${T_MG}${4}${T_ME})"
+}
+
+action()
+{
+	echo "${1}: renamed to '${T_MG}${3}${T_ME}'"
+	mv "$2" "$3"
+}
+
+## set color
+## source '/etc/sysconfig/init'
+##
+case $TERM in
+	xterm|xterm*|vt220|vt220*|linux)
+		T_MG=`echo -e "\\033[1;32m"` ## bold green
+		T_MB=`echo -e "\\033[1;34m"` ## bold blue
+		T_MR=`echo -e "\\033[1;31m"` ## bold red
+		T_MD=`echo -e "\\033[1;39m"` ## bold white
+		T_ME=`echo -e "\\033[0;39m"` ## normal white
+		;;
+	default)
+		T_MG=''
+		T_MB=''
+		T_MR=''
+		T_MD=''
+		T_ME=''
+		;;
+esac
+
+## check_argument number
+##
+[ "$#" -lt "2" ] && usage
+
+## get options
+##
+for ARGS in $* ; do
+	case "$ARGS" in
+		-R*)
+		  SUB_DIR=$ARGS
+		  ;;
+		-t*|-v*|--t*|--v*)
+		  CMD=testing
+		  ;;
+		-c*|--c*)
+		  CASE=1
+		  ;;
+		-d*|--d*)
+		  TYPE=d ## patch 2002.03.29
+		  SORT="-r"
+		  ;;
+		-h*|--h*)
+		  usage
+		  ;;
+		-*)
+		  : ;;
+		*)
+		  unshift=1
+		  ;;
+	esac
+
+	[ X"$unshift" = "X" ] && shift
+done
+
+STRING=$1
+TARGET_FILES=$2
+
+## recheck argument number
+##
+[ "$#" -lt "2" ] && usage
+
+## check sub_dir
+##
+if [ X"$SUB_DIR" = "X" ] ; then
+	MAXDEPTH="-maxdepth 1" ## current directory search
+else
+	MAXDEPTH=`echo "$SUB_DIR" | sed 's/^-R//'`
+	if [ `echo "$MAXDEPTH" | egrep "[^0-9]"` ] ; then
+		echo "${T_MR}invalid option($SUB_DIR) argument !!!, ex) -R, -R0, -R1, -R2, -R3, ...${T_ME}" >&2
+		usage
+	fi
+
+	## if $MAXDEPTH is null, then all sub directorys search
+	##
+	if [ X"$MAXDEPTH" != "X" ] ; then
+		maxdepth=$(($MAXDEPTH + 1))
+		MAXDEPTH="-maxdepth $maxdepth"
+	fi
+fi
+
+## check string
+## patch 2002.03.29
+##
+check_string=`echo "$STRING" | egrep "^/([^/]+)/([^/]*)/$"`
+if [ X"$check_string" = "X" ] ; then
+	echo "${T_MR}invalid string($STRING) !!!${T_ME}" >&2
+	usage
+fi
+
+## check target_files
+##
+if [ X"$TARGET_FILES" = "X" ] || [ `echo $TARGET_FILES | grep "^-"` ] ; then
+	echo "${T_MR}invalid target_file($TARGET_FILES) !!!${T_ME}" >&2
+	usage
+fi
+
+## check find path
+##
+if [ X"`echo $TARGET_FILES | grep /`" != "X" ] ; then
+	## same as find_path=`echo "$TARGET_FILES" | sed 's/\/\([^/]*\)$//'`
+	##
+	find_path=${TARGET_FILES%/*}
+	find_path=${find_path:-/} ## recheck, patch 2002.03.29
+
+	## same as TARGET_FILES=`echo "$TARGET_FILES" | awk -F"/" '{print($NF)}'`
+	##
+	TARGET_FILES=${TARGET_FILES##*/}
+fi
+
+## get from string, to string
+##
+from_string=`echo "$STRING" | awk -F"/" '{print($2)}'`
+to_string=`echo "$STRING" | awk -F"/" '{print($3)}'`
+
+## check upcase, lowcase translate
+## not good(bad checking T.T)
+##
+if [ X"$CASE" = "X1" ] ; then
+	from_tr=`echo "$from_string" | sed 's/[][]//g'`
+	to_tr=`echo "$to_string" | sed 's/[][]//g'`
+	if [ X$(echo "$from_tr" | tr A-Z a-z) != X$(echo "$to_tr" | tr A-Z a-z) ] ; then
+		echo "${T_MR}invalid string($STRING) !!!${T_ME}" >&2
+		usage
+	fi
+fi
+
+## lists of files
+##
+files=`find ${find_path:-.} -name "$TARGET_FILES" -type ${TYPE:-f} $MAXDEPTH | sort $SORT 2>/dev/null`
+
+## good idea
+##
+IFS_ORIG="$IFS"
+IFS='
+'
+
+i=0
+for pfile in $files ; do
+
+	## same as file=`basename $pfile`
+	##
+	file=${pfile##*/}
+
+	## same as path=`echo "$pfile" | sed 's/\/\([^/]*\)$//'`
+	##
+	path=${pfile%/*}
+
+	## if include ${from_string} string in $file, then action
+	##
+	if [ X$(echo "$file" | grep "$from_string") != "X" ] ; then
+		i=$(($i+1))
+		if [ X"$CASE" = "X1" ] ; then
+			tofile=`echo "$file" | tr "$from_tr" "$to_tr"`
+		else
+			## do not sed 's/$AAA/$BBB/g', you must sed "s/$AAA/$BBB/g"
+			##
+			tofile=`echo "$file" | sed "s${STRING}g"`
+		fi
+		${CMD:-action} "$i" "$pfile" "$path/$tofile" "$tofile"
+	fi
+done
+
+IFS="$IFS_ORIG"
+
+exit 0

@@ -1,0 +1,5 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvs_library
+cd hmchung_cvs_library
+cvs co -kk library

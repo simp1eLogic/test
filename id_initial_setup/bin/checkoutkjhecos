@@ -1,0 +1,6 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir kjh_cvs_ecos
+cd kjh_cvs_ecos
+cvs co -kk ecos
+cd ..

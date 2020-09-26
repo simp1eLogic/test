@@ -1,0 +1,1 @@
+find . -name "*.[Mm][Pp]3" -exec ~/bin/add_version '{}' \;

@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/test/hwpart/
+gvim -o3 test_hwpart.cc two_node.h two_node.cc

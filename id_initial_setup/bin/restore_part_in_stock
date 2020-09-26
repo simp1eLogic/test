@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf part_in_stock
+tar xvf /home/kjh/backup/part_in_stock_current.tar
+mv home/svn/part_in_stock .
+rm -rf home

@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/include/
+gvim -o5 hwpart.h protocol_control.h rxtx.h reception.h transmission.h

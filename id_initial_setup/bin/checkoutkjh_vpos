@@ -1,0 +1,5 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir kjh_cvs_vpos
+cd kjh_cvs_vpos
+cvs co -kk os/vpos

@@ -1,0 +1,4 @@
+cd
+tar zcvf hmchungcvsrootbackupfile_v-uClinux.tgz /home/hmchung/cvsroot/os/v-uClinux/*
+#ftp backup < bin/ftp_command
+#rm backupfile.tar.gz

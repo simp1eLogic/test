@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/test/threenodes/
+gvim -o3 test_threenodes.cc set_threenodes.h set_threenodes.cc

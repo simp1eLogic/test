@@ -1,0 +1,4 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+cvs co -kk testing
+cd ..

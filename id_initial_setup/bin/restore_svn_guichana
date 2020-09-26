@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf svn_guichana
+tar xvf /home/kjh/backup/svn_guichana_current.tar
+mv home/svn/svn_guichana .
+rm -rf home

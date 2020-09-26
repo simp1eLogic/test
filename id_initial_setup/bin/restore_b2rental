@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf b2rental
+tar xvf /home/kjh/backup/b2rental_current.tar
+mv home/svn/b2rental .
+rm -rf home

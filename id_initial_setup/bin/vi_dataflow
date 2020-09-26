@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/test/dataflow/
+gvim -o3 test_dataflow.cc set_dataflow.h set_dataflow.cc

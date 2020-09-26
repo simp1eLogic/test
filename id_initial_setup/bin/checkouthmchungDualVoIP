@@ -1,0 +1,9 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvs_voip
+cd hmchung_cvs_voip
+cvs co -kk os/v-uClinux
+cd os/v-uClinux/user
+\rm -r gct_voip
+cvs co -kk gct_voip_new
+mv gct_voip_new gct_voip

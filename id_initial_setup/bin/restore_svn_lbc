@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf svn_lbc
+tar xvf /home/kjh/backup/svn_lbc_current.tar
+mv home/svn/svn_lbc .
+rm -rf home

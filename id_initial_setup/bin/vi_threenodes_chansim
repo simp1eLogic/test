@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/test/threenodes_chansim/
+gvim -o test_threenodes_chansim.cc set_threenodes_chansim.h set_threenodes_chansim.cc

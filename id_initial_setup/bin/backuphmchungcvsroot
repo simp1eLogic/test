@@ -1,0 +1,2 @@
+cd /home/hmchung
+tar zcvf ~/home3/hmchungcvsrootbackupfile.tgz cvsroot/*

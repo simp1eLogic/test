@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf program
+tar xvf /home/kjh/backup/svn_current.tar
+mv home/svn/program .
+rm -rf home

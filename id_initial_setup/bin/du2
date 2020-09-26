@@ -1,0 +1,2 @@
+#!/bin/tcsh
+du --max-depth=2

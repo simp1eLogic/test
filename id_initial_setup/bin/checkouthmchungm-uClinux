@@ -1,0 +1,6 @@
+#!/bin/tcsh
+setenv CVSROOT /home/hmchung/cvsroot/
+mkdir hmchung_cvs_m-uClinux
+cd hmchung_cvs_m-uClinux
+cvs co -kk os/m-uClinux
+cd ..

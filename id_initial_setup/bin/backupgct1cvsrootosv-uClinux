@@ -1,0 +1,4 @@
+cd
+tar zcvf gct1cvsrootosv-uClinuxbackupfile.tgz /home/gct1/cvsroot/os/*
+#ftp backup < bin/ftp_command
+#rm backupfile.tar.gz

@@ -1,0 +1,16 @@
+#!/bin/tcsh
+setenv CVSROOT /home/kjh/cvsroot/
+mkdir tmp_voipForNetCodec
+cd tmp_voipForNetCodec
+cvs co -kk os/v-uClinux/
+find . -name CVS -exec \rm -r '{}' \;
+mv os/v-uClinux/user/gct_voip/Makefile.ACT os/v-uClinux/user/gct_voip/Makefile
+\rm -r os/v-uClinux/ReleaseNotes
+\rm -r os/v-uClinux/user/gct_voip/mobile
+\rm -r os/v-uClinux/user/gct_voip/stand_alone
+\rm -r os/v-uClinux/user/gct_voip/config_kernel_GSKG5403ACT*
+\rm -r os/v-uClinux/user/gct_voip/config_fs_GSKG5403ACT*
+tar zcvf os_netcodec.tgz os/*
+mv os_netcodec.tgz ..
+cd ..
+\rm -r tmp_voipForNetCodec

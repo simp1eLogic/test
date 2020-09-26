@@ -1,0 +1,2 @@
+cd
+cp -r -u -p -v daca/mp3/* daca_at_dvdserver1/mp3_new1/

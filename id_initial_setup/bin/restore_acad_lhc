@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/svn/
+rm -rf acad_lhc
+tar xvf /home/kjh/backup/acad_lhc_current.tar
+mv home/svn/acad_lhc .
+rm -rf home

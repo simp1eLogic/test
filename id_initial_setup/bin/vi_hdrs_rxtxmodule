@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/include/
+gvim -o5 mac_type.h common_attr.h primitive_port_struct.h functions.h rxtx.h

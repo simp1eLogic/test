@@ -1,0 +1,2 @@
+cd /home/kjh/work/macsrm/test/rxtx/
+gvim -o4 test_rxtx.cc set_rxtx.h set_rxtx.cc set_phyrxtx.cc

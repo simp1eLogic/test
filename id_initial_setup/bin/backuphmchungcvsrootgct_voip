@@ -1,0 +1,4 @@
+cd
+tar zcvf hmchungcvsrootbackupfile_gct_voip.tgz /home/hmchung/cvsroot/gct_voip/*
+#ftp backup < bin/ftp_command
+#rm backupfile.tar.gz
